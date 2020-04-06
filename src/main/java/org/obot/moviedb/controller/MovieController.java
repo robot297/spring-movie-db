@@ -30,7 +30,7 @@ public class MovieController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-
+        LOG.info("Post Successful: added {} to the database.", input.getName());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
