@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 //@Import(SpringDataR)
 @ComponentScan("org.obot.moviedb")
-@PropertySources({@PropertySource(value = {"application.properties"})})
+@PropertySources({@PropertySource(value = {"application.properties"}, ignoreResourceNotFound = true)})
 public class ApplicationConfig {
 
     @Autowired
