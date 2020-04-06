@@ -102,7 +102,7 @@ public class Database {
         }
     }
 
-    public void deleteMovie(Movie movie) {
+    public void deleteMovie(Movie movie) throws SQLException {
         String sql = "DELETE FROM movies WHERE name = ?";
 
         try (Connection connection = DriverManager.getConnection(dataBasePath);
@@ -113,6 +113,7 @@ public class Database {
 
         } catch (SQLException sqle){
             System.err.println("Error deleting movie from the table for move " + movie.getName() + " because " + sqle.getMessage());
+            throw new SQLException("Unable to delete movie: " + movie.getName());
         }
     }
 

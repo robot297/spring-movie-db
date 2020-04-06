@@ -1,8 +1,6 @@
 package org.obot.moviedb.domain;
 
 public class Movie {
-
-    private int id;
     private String name;
     private int stars;
     private boolean watched;
@@ -11,14 +9,6 @@ public class Movie {
         this.name = name;
         this.stars = stars;
         this.watched = watched;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

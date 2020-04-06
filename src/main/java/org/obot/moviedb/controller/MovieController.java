@@ -40,4 +40,18 @@ public class MovieController {
 
         return new ResponseEntity<Object>(database.getAllMovies(), HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/delete_movie", method = RequestMethod.DELETE, headers = "Accept=application/json")
+    public ResponseEntity<String> deleteMovie(@RequestBody Movie input){
+        LOG.info("Delete request received.");
+
+        try{
+            database.deleteMovie(input);
+        } catch (SQLException sqle){
+            LOG.error("Error occurred: {}", sqle);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
