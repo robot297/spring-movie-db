@@ -20,7 +20,7 @@ The following guides illustrate how to use some features concretely:
 
 * Make sure Docker is installed and running.
 * Build the image with the command `docker build . -t movie_db`
-* Create a container with the command `docker run -p 8080:8080 --rm movie_db:latest `
+* Create a container with the command `docker run -p 8080:8080 --rm movie_db:latest`
 
 ### Other information
 
