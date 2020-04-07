@@ -16,6 +16,12 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 
+### Docker
+
+* Make sure Docker is installed and running.
+* Build the image with the command `docker build . -t movie_db`
+* Create a container with the command `docker run -p 8080:8080 --rm movie_db:latest `
+
 ### Other information
 
 * You can access the swagger spec [here](http://localhost:8080/swagger-ui.html)
