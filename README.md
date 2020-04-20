@@ -18,8 +18,10 @@ The following guides illustrate how to use some features concretely:
 
 ### Docker
 
-* Make sure Docker is installed and running.
+* Have Docker installed and running.
+  * [Docker](https://www.docker.com/get-started)
 * Build the image with the command `docker build . -t movie_db`
+* When you're done running the application, just hit the keys `ctrl + c` in terminal to kill the process
 * Create a container with the command `docker run -p 8080:8080 --rm movie_db:latest`
 
 ### Other information
