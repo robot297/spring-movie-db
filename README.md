@@ -2,6 +2,13 @@
 
 We are going to make a Springboot API service to store movie ratings into a database.
 
+## Goals
+
+For this extra credit assignment, you need to convert the [movie database app](https://github.com/robot297/java-intro-to-sql)
+into a Spring Boot application.  You will also need to create a Docker image with your application as well.
+
+If you follow along the video tutorial, you should have built your very first Spring app and have it run in a container!
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
@@ -21,8 +28,8 @@ The following guides illustrate how to use some features concretely:
 * Have Docker installed and running.
   * [Docker](https://www.docker.com/get-started)
 * Build the image with the command `docker build . -t movie_db`
-* When you're done running the application, just hit the keys `ctrl + c` in terminal to kill the process
 * Create a container with the command `docker run -p 8080:8080 --rm movie_db:latest`
+* When you're done running the application, just hit the keys `ctrl + c` in terminal to kill the process
 
 ### Other information
 
