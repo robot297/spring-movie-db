@@ -28,7 +28,10 @@ The following guides illustrate how to use some features concretely:
 * Have Docker installed and running.
   * [Docker](https://www.docker.com/get-started)
 * Build the image with the command `docker build . -t movie_db`
-* Create a container with the command `docker run -p 8080:8080 --rm movie_db:latest`
+* Create a container with the command `docker run -i -t -p 8080:8080 --rm movie_db:latest`
+* To run **my** image, do the following:
+  * First pull my image down by running `docker pull robot297/spring-movie-app`
+  * Then create a container by running `docker run -i -t -p 8080:8080 -rm robot297/spring-movie-app`
 * When you're done running the application, just hit the keys `ctrl + c` in terminal to kill the process
 
 ### Other information
