@@ -21,7 +21,16 @@ public class MovieController {
 
     @RequestMapping(value = "/add_movie", method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<String> addMovie(@RequestBody Movie input){
+        LOG.info("Post received.");
 
+        try {
+            database.addNewMovie(input);
+        } catch (SQLException sqlException) {
+            LOG.error(sqlException.getMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        LOG.info("Post was successful: added a movie.");
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -29,12 +38,19 @@ public class MovieController {
     public ResponseEntity<Object> getMovies(){
         LOG.info("Get received.");
 
-        return new ResponseEntity<Object>(HttpStatus.OK);
+        return new ResponseEntity<Object>(database.getAllMovies(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/delete_movie", method = RequestMethod.DELETE, headers = "Accept=application/json")
     public ResponseEntity<String> deleteMovie(@RequestBody Movie input){
         LOG.info("Delete request received.");
+
+        try{
+            database.deleteMovie(input);
+        } catch (SQLException sqlException){
+            LOG.error("Error occurred.");
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
