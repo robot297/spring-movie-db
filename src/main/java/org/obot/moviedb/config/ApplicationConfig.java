@@ -24,19 +24,6 @@ public class ApplicationConfig {
     @Value("moviedb")
     String appName;
 
-    @Value("${dbconnector}")
-    String connector;
-
-    @Bean
-    public ApplicationProperties properties(){
-        return new ApplicationProperties();
-    }
-
-    @Bean
-    public Database database(){
-        return new Database(connector);
-    }
-
     @Bean
     public Docket api(){
         return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any())
