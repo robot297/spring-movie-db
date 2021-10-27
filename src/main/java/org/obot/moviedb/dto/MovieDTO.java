@@ -1,35 +1,36 @@
-package org.obot.moviedb.domain;
+package org.obot.moviedb.dto;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
-@Entity(name = "films")
-public class Movie {
+public class MovieDTO {
 
-    @Id
-    @GeneratedValue
     private Long id;
 
-    @Column(name = "Movie_Name")
+    @NotEmpty(message = "Gotta send a movie name.")
+    @Size(min = 2, max = 50, message = "Improper field size.")
     private String name;
 
-    @Column(name = "Number_Of_Stars")
     private int stars;
 
-    @Column(name = "Watched")
     private boolean watched;
 
-    public Movie(String name, int stars, boolean watched){
+    public MovieDTO() {
+    }
+
+    public MovieDTO(Long id, String name, int stars, boolean watched) {
+        this.id = id;
         this.name = name;
         this.stars = stars;
         this.watched = watched;
     }
 
-    public Movie() {
-
-    }
-
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
